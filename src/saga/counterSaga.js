@@ -1,4 +1,4 @@
-import {delay, put, takeLatest} from 'redux-saga/effects'
+import {delay, put, takeEvery, takeLatest} from 'redux-saga/effects'
 import { INC } from '../actions/counterAction';
 
 function* asycINC()
@@ -13,5 +13,5 @@ function* asycINC()
 export function* watchCounter()
 {
 
-    yield takeLatest('ABC_INC',asycINC)
+    yield takeEvery('ABC_INC',asycINC)
 }
